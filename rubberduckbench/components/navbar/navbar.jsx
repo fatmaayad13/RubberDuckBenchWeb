@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./navbar.module.css";
-import menuIcon from "../../assets/nav/menuIcon.png";
-import closeIcon from "../../assets/nav/closeIcon.png";
-import rbb from "../../assets/logo/logo.png";
+
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +10,7 @@ export const Navbar = () => {
         <nav className={styles.navbar}>
             <div className={styles.brand}>
                 <img
-                    src={rbb}
+                    src="/images/logo/logo.png"
                     alt="Rubber Duck Picture"
                     className={styles.Image}
                 />
@@ -25,8 +23,8 @@ export const Navbar = () => {
                 <img
                     className={styles.menuBtn}
                     src={menuOpen
-                        ? closeIcon
-                        : menuIcon
+                        ? "/images/nav/closeIcon.png"
+                        : "/images/nav/menuIcon.png"
                     }
                     alt="menu-button"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -37,7 +35,7 @@ export const Navbar = () => {
                         <a href="#about">About</a>
                     </li>
                     <li>
-                        <a href="#projects">Projects</a>
+                        <a href="#leaderboard">Leaderboard</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>

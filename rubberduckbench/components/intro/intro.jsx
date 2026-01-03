@@ -5,8 +5,8 @@ export const Intro = () => {
     return (
     <>
     <div className={styles.backgroundBlurs}>
-      <div className={styles.topBlur} />
-      <div className={styles.bottomBlur} />
+      {/* <div className={styles.topBlur} />
+      <div className={styles.bottomBlur} /> */}
     </div>
 
     <section className = {styles.container}> 
