@@ -41,6 +41,7 @@ export const Intro = () => {
                     className={styles.contactBtn} 
                   ><a href="#leaderboard" >Leaderboard </a>
                   </button>
+                  
                 </li>
               </ul>
               <br />

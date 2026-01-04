@@ -2,6 +2,8 @@ import React from 'react'
 import LeaderboardTable from "../components/leaderboard-table";
 import {Navbar} from "./../components/navbar/navbar";
 import {Intro} from "./../components/intro/intro";
+import {Footer} from "./../components/footer/footer";
+import Heatmap from "../components/heatmap/heatmap";
 import styles from './App.module.css';
 
 
@@ -16,7 +18,12 @@ const page = () => {
     <h2 id ="leaderboard" className="font font-semibold text-lg ml-45">LLM Leaderboard</h2>
     <div className="mt-10 ml-45 mr-45">
       <LeaderboardTable/></div>
+ 
+   
   </div>
+         <div className = "bg-gray-100 h-screen w-full">
+    <Heatmap/></div>
+ <div className={styles.App}> <Footer/> </div>
   </>
   );
 };
