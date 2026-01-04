@@ -15,7 +15,7 @@ import { leaderboardData } from "@/data/models"
 
 const LeaderboardTable = () => {
   const [search, setSearch] = useState("")
-  const [sortBy, setSortBy] = useState<"rank" | "model_name">("rank")
+  const [sortBy, setSortBy] = useState<"model" | "family" | "average" | "binary" | "cost">("average")
 
   let filteredData = leaderboardData
 
@@ -26,11 +26,22 @@ const LeaderboardTable = () => {
   }
 
 
-  if (sortBy === "rank") {
-    filteredData = [...filteredData].sort((a, b) => a.rank - b.rank)
-  } else if (sortBy === "model_name") {
+  if (sortBy === "model") {
+    filteredData = [...filteredData].sort((a, b) => a.model.localeCompare(b.model))
+  } else if (sortBy === "family") {
+    filteredData = [...filteredData].sort((a, b) => a.family.localeCompare(b.family))
+  } else if (sortBy === "cost") {
+    filteredData =
+      sortBy === "cost"
+        ? [...filteredData].sort((a, b) => {
+          if (a.cost === "N/A") return 1
+          if (b.cost === "N/A") return -1
+          return b.cost - a.cost
+        })
+        : [...filteredData].sort((a, b) => b[sortBy] - a[sortBy])
+  } else {
     filteredData = [...filteredData].sort((a, b) =>
-      a.model.localeCompare(b.model)
+      b[sortBy] - a[sortBy]
     )
   }
 
@@ -39,7 +50,8 @@ const LeaderboardTable = () => {
 
 
     <>
-      <div className="flex flex-col w-full h-full bg-white shadow">
+    
+      <div className="flex flex-col w-full h-30 bg-white shadow">
         <FilterHeading
           search={search}
           setSearch={setSearch}
@@ -51,33 +63,36 @@ const LeaderboardTable = () => {
 
       </div>
 
-      <div className="rounded-xl border bg-background">
-        <Table>
-          <TableHeader>
-            <TableRow>
+      <div className="rounded-xl border bg-background max-h-[50vh] overflow-y-scroll">
+        <Table className="text-lg items-center">
+          <TableHeader className="bg-muted/80 backdrop-blur">
+            <TableRow >
               <TableHead className="w-15">#</TableHead>
               <TableHead>Model</TableHead>
-              <TableHead>Org</TableHead>
-              <TableHead className="text-right">Overall</TableHead>
-              <TableHead className="text-right">Reasoning</TableHead>
-              <TableHead className="text-right">Coding</TableHead>
+              <TableHead>LLM Family</TableHead>
+              <TableHead className="text-right">Average across tirals</TableHead>
+              <TableHead className="text-right">Binary Correctness</TableHead>
+              <TableHead className="text-right">Avg. Cost</TableHead>
             </TableRow>
           </TableHeader>
 
           <TableBody>
-            {filteredData.map((row) => (
+            {filteredData.map((row, index) => (
 
               <TableRow key={row.model}
               >
-                <TableCell className={row.rank === 1 ? "font-bold text-primary" : ""}
-                >{row.rank}</TableCell>
-                <TableCell>{row.model}</TableCell>
+                <TableCell className={index === 0 ? "font-bold text-primary" : ""}
+                >{index + 1}</TableCell>
+                <TableCell>  <div className="flex items-center gap-2">
+                  <img src={row.image} alt={row.model} className="h-6 w-6" />
+                 <span className="truncate">{row.model}</span>
+                </div></TableCell>
                 <TableCell className="text-muted-foreground">
-                  {row.org}
+                  {row.family}
                 </TableCell>
-                <TableCell className="text-right">{row.overall}</TableCell>
-                <TableCell className="text-right">{row.reasoning}</TableCell>
-                <TableCell className="text-right">{row.coding}</TableCell>
+                <TableCell className="text-right">{row.average}</TableCell>
+                <TableCell className="text-right">{row.binary}</TableCell>
+                <TableCell className="text-right"> {row.cost === "N/A" ? row.cost : `$${row.cost}`}</TableCell>
               </TableRow>
             ))}
           </TableBody>

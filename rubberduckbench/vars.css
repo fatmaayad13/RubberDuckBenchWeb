@@ -1,14 +1,14 @@
 :root {
     /* Colors */
-    --color-text: #11296b;
+    --color-text: #051339;
     --color-primary: #ffcb05;
     --color-secondary: #ffdb57;
     --color-dark: #00509d;
-    --color-bg: #ededed;
+    --color-bg: #031138;
 
     /* Fonts */
-    --font-robot: "Roboto"
+    --font-roboto: "Roboto"
+    --font-montserrat: "Montserrat"
 
-#fb74a8
 
 }

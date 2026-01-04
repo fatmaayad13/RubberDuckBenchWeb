@@ -15,8 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { ChevronDown } from "lucide-react"
 
-
-type SortByValue = "rank" | "model_name"
+type SortByValue = "model" | "family" | "average" | "binary" | "cost";
 
 type SortByProps = {
   sortBy: SortByValue
@@ -24,12 +23,24 @@ type SortByProps = {
 }
 const items = [
   {
-    label: "Rank",
-    value: "rank"
+    label: "Model",
+    value: "model"
   },
   {
-    label: "Model Name",
-    value: "model_name"
+    label: "LLM Family",
+    value: "family"
+  },
+  {
+    label: "Average across trials",
+    value: "average"
+  },
+  {
+  label: "Binary correctness",
+  value: "binary"
+  },
+  {
+  label: "Avg. Cost in $",
+  value: "cost"
   }
 ]
 
@@ -40,43 +51,43 @@ const SortBy = ({ sortBy, setSortBy }: SortByProps) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-      <div
-        className="flex items-center space-x-1"
+        <div
+          className="flex items-center space-x-1"
         >
           <p className="text-sm">
             Sort By:
           </p>
-        <Button variant="ghost"
-        size="sm"
-        className="text-primary font-semibold"
-        >{
-        items.find(item => item.value === sortBy)?.label}
-         <ChevronDown className="ml-2 h-4 w-4"></ChevronDown></Button>
+          <Button variant="ghost"
+            size="sm"
+            className="text-primary font-semibold"
+          >{
+              items.find(item => item.value === sortBy)?.label}
+            <ChevronDown className="ml-2 h-4 w-4"></ChevronDown></Button>
 
         </div>
-        
+
       </DropdownMenuTrigger>
-      
+
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Sort table by</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup  value={sortBy}
+        <DropdownMenuRadioGroup value={sortBy}
           onValueChange={(value) =>
             setSortBy(value as SortByValue)
           }>
-            {items.map(item => <DropdownMenuRadioItem value={item.value}
-              key={item.value}
+          {items.map(item => <DropdownMenuRadioItem value={item.value}
+            key={item.value}
 
-            >
-              {item.label}
+          >
+            {item.label}
           </DropdownMenuRadioItem>)}
-        </DropdownMenuRadioGroup> 
+        </DropdownMenuRadioGroup>
 
 
       </DropdownMenuContent>
     </DropdownMenu>
   )
 }
- 
+
 
 export default SortBy

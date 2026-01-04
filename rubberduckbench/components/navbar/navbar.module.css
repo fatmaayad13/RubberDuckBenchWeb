@@ -20,13 +20,18 @@
 }
 
 .title {
-  position: flex;
-  margin: 50px;
-  font-size: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  color: var(--color-primary);
-  margin: 0% auto;
+
+    font-size: clamp(2rem, 4vw, 4rem); /* scales with screen width */
+  font-weight: 900;
+  line-height: 1.2; /* prevents overlapping lines */
+  margin-bottom: 1rem;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  background: linear-gradient(90deg, var(--color-primary) 0%, rgb(236, 187, 24) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center; /* optional, centers text */
+  z-index: 0;
 }
 
 .brand {
@@ -50,7 +55,6 @@
   gap: 10px;
   list-style: none;
 
-
 }
 
 .menuBtn {
@@ -66,10 +70,11 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 1200px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    z-index: 5;
   }
 
   .menu {
@@ -79,7 +84,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 5px;
-    z-index: 3;
+    z-index: 5;
   }
 
   .menuBtn {
@@ -91,20 +96,22 @@
   .menuItems {
     display: none;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
+    color: var(--color-text);
     border-radius: 10px;
-    background: var(--color-primary);
-    background: linear-gradient(0deg, rgba(213, 93, 146, 1) 0%, rgba(82, 46, 56, 1) 100%);
-    padding: 24px 33px;
+    background: var(--color-text);
+    background: linear-gradient(0deg, var(--color-text) 100%);
+    padding: 24px 20px;
     box-shadow: 0 0 4px 0 rgba(82, 46, 56, 1);
+    z-index: 5;
   }
 
 
 
   .menuOpen {
     display: flex;
-    z-index: 1;
+    z-index: 5;
 
 
   }

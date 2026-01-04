@@ -11,7 +11,9 @@ export const Intro = () => {
 
     <section className = {styles.container}> 
             <div className={styles.content}>
-            <p className = {styles.subTitle}>Hey there!</p>
+            <p className = {styles.subTitle}>A multilingual benchmark featuring coding
+               questions and detailed evaluation rubrics. It is designed as a standard 
+               for advancing research on reliable and accurate AI coding assistants.</p>
 
             <h1 className = {styles.title}>
 
@@ -34,7 +36,12 @@ export const Intro = () => {
                     arXiv
                   </button>
                 </li>
-                
+                                <li>
+                  <button
+                    className={styles.contactBtn} 
+                  ><a href="#leaderboard" >Leaderboard </a>
+                  </button>
+                </li>
               </ul>
               <br />
               <p className = {styles.description}>Check out my website :)</p>

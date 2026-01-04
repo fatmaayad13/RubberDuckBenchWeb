@@ -12,9 +12,9 @@ const page = () => {
     <Intro/>
   </div>
 
-  <div className="flex flex-col p-10 bg-gray-100 h-scree w-full" >
-    <h2 className="font font-semibold">LLM Leaderboard</h2>
-    <div className="mt-10">
+  <div className="flex flex-col p-10 bg-gray-100 h-screen w-full" >
+    <h2 id ="leaderboard" className="font font-semibold text-lg ml-45">LLM Leaderboard</h2>
+    <div className="mt-10 ml-45 mr-45">
       <LeaderboardTable/></div>
   </div>
   </>
