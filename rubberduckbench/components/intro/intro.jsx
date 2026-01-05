@@ -25,7 +25,7 @@ export const Intro = () => {
                     className={styles.contactBtn}
                     onClick={() => window.open("https://github.com/user2716/RubberDuckBench", "_blank")}
                   >
-                    GitHub
+                   <div className="flex items-center gap-2"><img src = "/images/logos/github.png"/> GitHub </div>
                   </button>
                 </li>
                 <li>
@@ -33,7 +33,7 @@ export const Intro = () => {
                     className={styles.contactBtn}
                     onClick={() => window.open("https://arxiv.org/abs/2408.08453", "_blank")}
                   >
-                    arXiv
+                     <div className="flex items-center gap-2"><img src = "/images/logos/arxiv.png"/> arXiv </div>
                   </button>
                 </li>
                                 <li>
