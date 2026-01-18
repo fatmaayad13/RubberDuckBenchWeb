@@ -21,7 +21,7 @@
 
 .title {
 
-    font-size: clamp(2rem, 4vw, 4rem); /* scales with screen width */
+  font-size: clamp(2rem, 4vw, 4rem); /* scales with screen width */
   font-weight: 900;
   line-height: 1.2; /* prevents overlapping lines */
   margin-bottom: 1rem;
@@ -42,6 +42,7 @@
   display: flex;
   align-items: center;
   gap: 0px;
+
 
 }
 
@@ -68,6 +69,8 @@
   font-size: 20px;
   color: var(--color-primary);
   text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 @media screen and (max-width: 1200px) {

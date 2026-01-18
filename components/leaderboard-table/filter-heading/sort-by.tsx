@@ -52,14 +52,14 @@ const SortBy = ({ sortBy, setSortBy }: SortByProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <div
-          className="flex items-center space-x-1"
+          className="flex items-center space-x-1 cursor: cursor-pointer"
         >
           <p className="text-sm">
             Sort By:
           </p>
           <Button variant="ghost"
             size="sm"
-            className="text-primary font-semibold"
+            className="text-primary font-semibold cursor: cursor-pointer"
           >{
               items.find(item => item.value === sortBy)?.label}
             <ChevronDown className="ml-2 h-4 w-4"></ChevronDown></Button>
@@ -71,11 +71,11 @@ const SortBy = ({ sortBy, setSortBy }: SortByProps) => {
       <DropdownMenuContent className="w-56">
         <DropdownMenuLabel>Sort table by</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={sortBy}
+        <DropdownMenuRadioGroup  value={sortBy}
           onValueChange={(value) =>
             setSortBy(value as SortByValue)
           }>
-          {items.map(item => <DropdownMenuRadioItem value={item.value}
+          {items.map(item => <DropdownMenuRadioItem className= "cursor: cursor-pointer" value={item.value}
             key={item.value}
 
           >

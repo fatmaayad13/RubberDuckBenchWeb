@@ -12,58 +12,67 @@ import {
 } from "@/components/ui/table"
 
 import { leaderboardData } from "@/data/models"
+import { SortByValue } from "@/components/leaderboard-table/types"
 
 const LeaderboardTable = () => {
   const [search, setSearch] = useState("")
-  const [sortBy, setSortBy] = useState<"model" | "family" | "average" | "binary" | "cost">("average")
+  const [sortBy, setSortBy] = useState<SortByValue>("average");
+  const [selectedModels, setSelectedModels] = useState<string[]>([]);
+  const [selectedFamilies, setSelectedFamilies] = useState<string[]>([]);
 
-  let filteredData = leaderboardData
 
+  let filteredData = leaderboardData;
+
+  // Search filter
   if (search) {
-    filteredData = filteredData.filter((row) =>
+    filteredData = filteredData.filter(row =>
       row.model.toLowerCase().includes(search.toLowerCase())
-    )
+    );
   }
 
+  // Model & family filters
+  filteredData = filteredData.filter(row =>
+    (selectedModels.length === 0 || selectedModels.includes(row.model)) &&
+    (selectedFamilies.length === 0 || selectedFamilies.includes(row.family))
+  );
 
+  // Sorting
   if (sortBy === "model") {
-    filteredData = [...filteredData].sort((a, b) => a.model.localeCompare(b.model))
+    filteredData = filteredData.sort((a, b) => a.model.localeCompare(b.model));
   } else if (sortBy === "family") {
-    filteredData = [...filteredData].sort((a, b) => a.family.localeCompare(b.family))
+    filteredData = filteredData.sort((a, b) => a.family.localeCompare(b.family));
   } else if (sortBy === "cost") {
-    filteredData =
-      sortBy === "cost"
-        ? [...filteredData].sort((a, b) => {
-          if (a.cost === "N/A") return 1
-          if (b.cost === "N/A") return -1
-          return b.cost - a.cost
-        })
-        : [...filteredData].sort((a, b) => b[sortBy] - a[sortBy])
+    filteredData = filteredData.sort((a, b) => {
+      if (a.cost === "N/A") return 1;
+      if (b.cost === "N/A") return -1;
+      return b.cost - a.cost;
+    });
   } else {
-    filteredData = [...filteredData].sort((a, b) =>
-      b[sortBy] - a[sortBy]
-    )
+    filteredData = filteredData.sort((a, b) => b[sortBy] - a[sortBy]);
   }
-
 
   return (
 
 
     <>
-    
-      <div className="flex flex-col w-full h-30 bg-white shadow">
+
+      <div className="rounded-t-lg flex flex-col w-full h-30 bg-white shadow">
         <FilterHeading
           search={search}
           setSearch={setSearch}
           sortBy={sortBy}
           setSortBy={setSortBy}
+          selectedModels={selectedModels}
+          setSelectedModels={setSelectedModels}
+          selectedFamilies={selectedFamilies}
+          setSelectedFamilies={setSelectedFamilies}
         />
 
 
 
       </div>
 
-      <div className="rounded-xl border bg-background max-h-[50vh] overflow-y-scroll">
+      <div className="rounded border bg-background max-h-[50vh] overflow-y-scroll">
         <Table className="text-lg items-center">
           <TableHeader className="bg-muted/80 backdrop-blur">
             <TableRow >
@@ -85,7 +94,7 @@ const LeaderboardTable = () => {
                 >{index + 1}</TableCell>
                 <TableCell>  <div className="flex items-center gap-2">
                   <img src={row.image} alt={row.model} className="h-6 w-6" />
-                 <span className="truncate">{row.model}</span>
+                  <span className="truncate">{row.model}</span>
                 </div></TableCell>
                 <TableCell className="text-muted-foreground">
                   {row.family}
