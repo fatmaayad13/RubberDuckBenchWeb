@@ -27,7 +27,7 @@ export const Footer = () => {
               <br></br>
               <li><a href="mailto:edinella@brynmawr.edu">Contact</a></li>
               <li><a href="tel:315-718-4032">(315) 718-4032</a></li>
-              
+
             </ul>
           </div>
           <div>
@@ -38,11 +38,17 @@ export const Footer = () => {
         {/* Bryn Mawr Attribution */}
         <div className={styles.brynMawr}>
           <h4>Supported By</h4>
-          <img
-            src={brynMawrLogo.src}
-            alt="Bryn Mawr College Logo"
-            className={styles.brynMawrLogo}
-          />
+          <a
+            href="https://www.brynmawr.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={brynMawrLogo.src}
+              alt="Bryn Mawr College Logo"
+              className={styles.brynMawrLogo}
+            />
+          </a>
           <p className={styles.brynMawrText}>
             Research conducted at Bryn Mawr College
           </p>
