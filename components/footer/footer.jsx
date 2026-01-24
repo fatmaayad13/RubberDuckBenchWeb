@@ -24,9 +24,8 @@ export const Footer = () => {
               <li><a href="https://github.com/user2716/RubberDuckBench" target="_blank">GitHub Repo</a></li>
               <li><a href="https://arxiv.org/abs/2408.08453" target="_blank">arXiv Paper</a></li>
               <li><a href="#about">About This Work</a></li>
-              <br></br>
               <li><a href="mailto:edinella@brynmawr.edu">Contact</a></li>
-              <li><a href="tel:315-718-4032">(315) 718-4032</a></li>
+
 
             </ul>
           </div>
@@ -34,10 +33,12 @@ export const Footer = () => {
 
           </div>
         </div>
+      </div>
 
-        {/* Bryn Mawr Attribution */}
+      {/* Bottom Row — Social + Copyright */}
+      <div className={styles.footerBottom}>
         <div className={styles.brynMawr}>
-          <h4>Supported By</h4>
+
           <a
             href="https://www.brynmawr.edu"
             target="_blank"
@@ -49,25 +50,13 @@ export const Footer = () => {
               className={styles.brynMawrLogo}
             />
           </a>
-          <p className={styles.brynMawrText}>
-            Research conducted at Bryn Mawr College
-          </p>
+
         </div>
-      </div>
 
-      {/* Bottom Row — Social + Copyright */}
-      <div className={styles.footerBottom}>
-        {/* <div className={styles.social}>
-          <a href="https://facebook.com/brynmawr" target="_blank">Facebook</a>
-          <a href="https://instagram.com/brynmawr" target="_blank">Instagram</a>
-          <a href="https://youtube.com/brynmawr" target="_blank">YouTube</a>
-          <a href="https://linkedin.com/school/bryn-mawr-college" target="_blank">LinkedIn</a>
-          <a href="https://tiktok.com/@brynmawr" target="_blank">TikTok</a>
-        </div> */}
 
-        <p className={styles.copy}>
+        {/* <p className={styles.copy}>
           © {new Date().getFullYear()} Rubber Duck Bench &amp; Bryn Mawr College. &nbsp;All rights reserved.
-        </p>
+        </p> */}
       </div>
     </footer>
   );

@@ -79,9 +79,9 @@ const LeaderboardTable = () => {
               <TableHead className="w-15">#</TableHead>
               <TableHead>Model</TableHead>
               <TableHead>LLM Family</TableHead>
-              <TableHead className="text-right">Average across tirals</TableHead>
-              <TableHead className="text-right">Binary Correctness</TableHead>
-              <TableHead className="text-right">Avg. Cost</TableHead>
+              <TableHead className="text-right">Performance</TableHead>
+              <TableHead className="text-right">Perfect Answers</TableHead>
+              <TableHead className="text-right">Cost</TableHead>
             </TableRow>
           </TableHeader>
 
@@ -99,9 +99,19 @@ const LeaderboardTable = () => {
                 <TableCell className="text-muted-foreground">
                   {row.family}
                 </TableCell>
-                <TableCell className="text-right">{row.average}</TableCell>
-                <TableCell className="text-right">{row.binary}</TableCell>
-                <TableCell className="text-right"> {row.cost === "N/A" ? row.cost : `$${row.cost}`}</TableCell>
+                <TableCell className="text-right">{row.average.toFixed(2)}%</TableCell>
+                <TableCell className="flex justify-end gap-1">
+                  {Array.from({ length: row.binary }).map((_, i) => (
+                    <img
+                      key={i}
+                      src="/images/logos/star.png"
+                      alt="Star"
+                      className="h-5 w-5"
+                    />
+                  ))}
+                </TableCell>
+
+                <TableCell className="text-right">{typeof row.cost === "number" ? `$${row.cost.toFixed(3)}` : row.cost} </TableCell>
               </TableRow>
             ))}
           </TableBody>

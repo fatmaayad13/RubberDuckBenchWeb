@@ -15,6 +15,8 @@ type HeatmapDatum = {
   question: string
   answer: string
   type: string
+  rubric: string,
+  rubricpoints: string
 
 };
 
@@ -87,7 +89,7 @@ export default function Heatmap() {
     const y = d3
       .scaleBand()
       .domain(variables)
-      .range([height, 0])
+      .range([0, height])
       .padding(0.03);
 
 
@@ -276,6 +278,22 @@ export default function Heatmap() {
               <strong>Answer:</strong><br />
               {selectedCell.answer || "No answer yet"}
             </p>
+            <p>
+              <strong>Rubric:</strong>{" "}
+              <a
+                href={selectedCell.rubric}
+                className="underline text-blue-500"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View rubric for {selectedCell.language_num}
+              </a>
+            </p>
+            <p>
+              <strong>Rubric Points: </strong>
+              {selectedCell.rubricpoints}
+            </p>
+
 
 
           </div>

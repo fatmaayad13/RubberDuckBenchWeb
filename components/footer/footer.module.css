@@ -44,7 +44,7 @@
   color: var(--color-primary);
 }
 .links {
-  flex: 2 1 400px;
+  flex-end: auto;
   display: flex;
   gap: 2rem;
 }

@@ -31,15 +31,15 @@ const items = [
     value: "family"
   },
   {
-    label: "Average across trials",
+    label: "Performance",
     value: "average"
   },
   {
-  label: "Binary correctness",
+  label: "Perfect Answers",
   value: "binary"
   },
   {
-  label: "Avg. Cost in $",
+  label: "Cost",
   value: "cost"
   }
 ]
