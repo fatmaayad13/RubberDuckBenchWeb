@@ -50,7 +50,7 @@ export const Intro = () => {
           </p>
         
           <p className={styles.description}>
-             Check out our&nbsp; <a href="https://arxiv.org/abs/2408.08453"target="_blank"> paper </a> &nbsp;for more information!
+             Check out our&nbsp; <a href="https://arxiv.org/abs/2601.16456"target="_blank"> paper </a> &nbsp;for more information!
           </p>
         </div>
 
