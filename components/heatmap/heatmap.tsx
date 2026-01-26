@@ -156,8 +156,8 @@ export default function Heatmap() {
 
 
     svg
-      .selectAll("rect")
-      .data(data, (d: HeatmapDatum) => `${d.model}:${d.language_num}`)
+      .selectAll<SVGRectElement, HeatmapDatum>("rect")
+      .data(data, (d) => `${d.model}:${d.language_num}`)
       .enter()
       .append("rect")
       .attr("x", (d) => x(d.language_num)!)

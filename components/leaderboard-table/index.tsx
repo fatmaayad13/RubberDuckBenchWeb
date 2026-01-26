@@ -45,7 +45,7 @@ const LeaderboardTable = () => {
     filteredData = filteredData.sort((a, b) => {
       if (a.cost === "N/A") return 1;
       if (b.cost === "N/A") return -1;
-      return b.cost - a.cost;
+      return Number(b.cost) - Number(a.cost);
     });
   } else {
     filteredData = filteredData.sort((a, b) => b[sortBy] - a[sortBy]);
