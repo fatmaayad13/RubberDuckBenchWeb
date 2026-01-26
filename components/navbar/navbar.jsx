@@ -10,7 +10,7 @@ export const Navbar = () => {
         <nav className={styles.navbar}>
             <div className={styles.brand}>
                 <img
-                    src="/images/RubberDuck/logo.png"
+                    src="./images/RubberDuck/logo.png"
                     alt="Rubber Duck Picture"
                     className={styles.Image}
                 />
@@ -23,8 +23,8 @@ export const Navbar = () => {
                 <img
                     className={styles.menuBtn}
                     src={menuOpen
-                        ? "/images/nav/closeIcon.png"
-                        : "/images/nav/menuIcon.png"
+                        ? "./images/nav/closeIcon.png"
+                        : "./images/nav/menuIcon.png"
                     }
                     alt="menu-button"
                     onClick={() => setMenuOpen(!menuOpen)}

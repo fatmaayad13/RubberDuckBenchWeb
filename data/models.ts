@@ -10,7 +10,7 @@ export type LeaderboardRow = {
 
 export const leaderboardData: LeaderboardRow[] = [
   {
-    image: "/images/logos/grok.png",
+    image: "./images/logos/grok.png",
     model: "Grok 4",
     family: "xAI",
     average: 69.29,
@@ -20,7 +20,7 @@ export const leaderboardData: LeaderboardRow[] = [
   },
 
   {
-    image: "/images/logos/grok.png",
+    image: "./images/logos/grok.png",
     model: "Grok 3",
     family: "xAI",
     average: 54.74,
@@ -29,7 +29,7 @@ export const leaderboardData: LeaderboardRow[] = [
 
   },
   {
-    image: "/images/logos/claude-ai-icon.png",
+    image: "./images/logos/claude-ai-icon.png",
     model: "Claude Opus 4",
     family: "Anthropic",
     average: 68.53,
@@ -38,7 +38,7 @@ export const leaderboardData: LeaderboardRow[] = [
 
   },
   {
-image: "/images/logos/claude-ai-icon.png",
+image: "./images/logos/claude-ai-icon.png",
     model: "Claude Opus 4.1",
     family: "Anthropic",
     average: 67.02,
@@ -48,7 +48,7 @@ image: "/images/logos/claude-ai-icon.png",
   },
 
   {
-    image: "/images/logos/claude-ai-icon.png",
+    image: "./images/logos/claude-ai-icon.png",
     model: "Claude Sonnet 4",
     family: "Anthropic",
     average: 61.66,
@@ -58,7 +58,7 @@ image: "/images/logos/claude-ai-icon.png",
   },
 
   {
-image: "/images/logos/claude-ai-icon.png",
+image: "./images/logos/claude-ai-icon.png",
     model: "Claude Sonnet 3.7",
     family: "Anthropic",
     average: 61.47,
@@ -67,7 +67,7 @@ image: "/images/logos/claude-ai-icon.png",
 
   },
   {
-image: "/images/logos/OpenAI-black-monoblossom.png",
+image: "./images/logos/OpenAI-black-monoblossom.png",
     model: "Gpt-5",
     family: "OpenAI",
     average: 67.80,
@@ -76,7 +76,7 @@ image: "/images/logos/OpenAI-black-monoblossom.png",
   },
 
   {
-image: "/images/logos/OpenAI-black-monoblossom.png",
+image: "../images/logos/OpenAI-black-monoblossom.png",
     model: "o3",
     family: "OpenAI",
     average: 64.93,
@@ -86,7 +86,7 @@ image: "/images/logos/OpenAI-black-monoblossom.png",
   },
 
   {
-image: "/images/logos/OpenAI-black-monoblossom.png",
+image: "./images/logos/OpenAI-black-monoblossom.png",
     model: "gpt-oss-20",
     family: "OpenAI",
     average: 63.63,
@@ -96,7 +96,7 @@ image: "/images/logos/OpenAI-black-monoblossom.png",
   },
 
   {
-image: "/images/logos/OpenAI-black-monoblossom.png",
+image: "./images/logos/OpenAI-black-monoblossom.png",
     model: "gpt-oss-120",
     family: "OpenAI",
     average: 59.54,
@@ -106,7 +106,7 @@ image: "/images/logos/OpenAI-black-monoblossom.png",
   },
 
   {
-image: "/images/logos/OpenAI-black-monoblossom.png",
+image: "./images/logos/OpenAI-black-monoblossom.png",
     model: "Gpt-4.1",
     family: "OpenAI",
     average: 59.47,
@@ -116,7 +116,7 @@ image: "/images/logos/OpenAI-black-monoblossom.png",
   },
 
   {
-image: "/images/logos/gemini.png",
+image: "./images/logos/gemini.png",
     model: "Gemini 2.5 Flash",
     family: "Google",
     average: 64.30,
@@ -125,7 +125,7 @@ image: "/images/logos/gemini.png",
 
   },
   {
-image: "/images/logos/gemini.png",
+image: "./images/logos/gemini.png",
     model: "Gemini 2.5 Pro",
     family: "Google",
     average: 64.01,
@@ -135,7 +135,7 @@ image: "/images/logos/gemini.png",
   },
 
   {
-image: "/images/logos/gemini.png",
+image: "./images/logos/gemini.png",
     model: "Gemini 2.0 Flash",
     family: "Google",
     average: 53.78,
@@ -145,7 +145,7 @@ image: "/images/logos/gemini.png",
   },
 
   {
-image: "/images/logos/qwen-color.png",
+image: "./images/logos/qwen-color.png",
     model: "Qwen 3",
     family: "Alibaba",
     average: 61.14,
@@ -155,7 +155,7 @@ image: "/images/logos/qwen-color.png",
   },
 
   {
-image: "/images/logos/qwen-color.png",
+image: "./images/logos/qwen-color.png",
     model: "Qwen 3 Coder",
     family: "Alibaba",
     average: 49.73,
@@ -164,7 +164,7 @@ image: "/images/logos/qwen-color.png",
 
   },
   {
-image: "/images/logos/meta-logo.png",
+image: "./images/logos/meta-logo.png",
     model: "Llama 4 Scout",
     family: "Meta",
     average: 52.96,
@@ -174,7 +174,7 @@ image: "/images/logos/meta-logo.png",
   },
 
   {
-image: "/images/logos/meta-logo.png",
+image: "./images/logos/meta-logo.png",
     model: "Llama3.3 70",
     family: "Meta",
     average: 56.36,
@@ -184,7 +184,7 @@ image: "/images/logos/meta-logo.png",
   },
 
   {
-image: "/images/logos/deepseek-logo-icon.png",
+image: "./images/logos/deepseek-logo-icon.png",
     model: "Deepseek-R1",
     family: "Deepseek",
     average: 54.40,
@@ -196,7 +196,7 @@ image: "/images/logos/deepseek-logo-icon.png",
 
 
   {
-image: "/images/logos/mistral-ai-icon.png",
+image: "./images/logos/mistral-ai-icon.png",
     model: "Mistral Large",
     family: "Mistral AI",
     average: 48.67,

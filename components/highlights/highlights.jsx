@@ -26,7 +26,7 @@ export const Highlights = () => {
         </ul>
 
         <p className={styles.description}>
-          Explore the full methodology and results in our <a href="https://arxiv.org/abs/2408.08453" target="_blank">paper</a>.
+          Explore the full methodology and results in our <a href="https://arxiv.org/abs/2601.16456" target="_blank">paper</a>.
         </p>
       </div>
     </section>

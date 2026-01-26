@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,73933,e=>{e.v("/RubberDuckBench/_next/static/media/bryn-mawr-logo.687dc9d6.png")},78184,e=>{e.v("/RubberDuckBench/_next/static/media/logo.c08bea75.png")}]);

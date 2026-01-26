@@ -1,7 +1,7 @@
 "use client";
 import styles from "./footer.module.css";
-import brynMawrLogo from "../../public/images/logos/bryn-mawr-logo.png"; // adjust path
-import duckLogo from "../../public/images/RubberDuck/logo.png"; // optional ico
+import brynMawrLogo from "../../public./images/logos/bryn-mawr-logo.png"; // adjust path
+import duckLogo from "../../public./images/RubberDuck/logo.png"; // optional ico
 
 export const Footer = () => {
   return (
@@ -22,7 +22,7 @@ export const Footer = () => {
           <div>
             <ul>
               <li><a href="https://github.com/user2716/RubberDuckBench" target="_blank">GitHub Repo</a></li>
-              <li><a href="https://https://arxiv.org/abs/2601.16456" target="_blank">arXiv Paper</a></li>
+              <li><a href="https://arxiv.org/abs/2601.16456" target="_blank">arXiv Paper</a></li>
               <li><a href="#about">About This Work</a></li>
               <li><a href="mailto:edinella@brynmawr.edu">Contact</a></li>
 

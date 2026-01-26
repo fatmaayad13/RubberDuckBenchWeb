@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[47257,["/RubberDuckBench/_next/static/chunks/4fd93823156e59e8.js"],"ClientPageRoot"]
-3:I[31713,["/RubberDuckBench/_next/static/chunks/ff273dc4e45dbb79.js","/RubberDuckBench/_next/static/chunks/79e3b1b0f6c338e6.js"],"default"]
+3:I[31713,["/RubberDuckBench/_next/static/chunks/6bb2e87def877cda.js","/RubberDuckBench/_next/static/chunks/9f49ac03741469c8.js"],"default"]
 6:I[97367,["/RubberDuckBench/_next/static/chunks/4fd93823156e59e8.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
 :HL["/RubberDuckBench/_next/static/chunks/4bc1595dae576d51.css","style"]
-0:{"buildId":"bL3SMwWtjpIEc6ZlfmWYP","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/RubberDuckBench/_next/static/chunks/4bc1595dae576d51.css","precedence":"next"}],["$","script","script-0",{"src":"/RubberDuckBench/_next/static/chunks/ff273dc4e45dbb79.js","async":true}],["$","script","script-1",{"src":"/RubberDuckBench/_next/static/chunks/79e3b1b0f6c338e6.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"PFmi3ENclsUDjFGeN6GhK","rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/RubberDuckBench/_next/static/chunks/4bc1595dae576d51.css","precedence":"next"}],["$","script","script-0",{"src":"/RubberDuckBench/_next/static/chunks/6bb2e87def877cda.js","async":true}],["$","script","script-1",{"src":"/RubberDuckBench/_next/static/chunks/9f49ac03741469c8.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"loading":null,"isPartial":false}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null

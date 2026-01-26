@@ -104,7 +104,7 @@ const LeaderboardTable = () => {
                   {Array.from({ length: row.binary }).map((_, i) => (
                     <img
                       key={i}
-                      src="/images/logos/star.png"
+                      src="./images/logos/star.png"
                       alt="Star"
                       className="h-5 w-5"
                     />
