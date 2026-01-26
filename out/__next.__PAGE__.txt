@@ -1,0 +1,13 @@
+1:"$Sreact.fragment"
+2:I[26074,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"Navbar"]
+3:I[85511,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"Intro"]
+4:I[46742,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"Highlights"]
+5:I[56777,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"default"]
+6:I[10798,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"default"]
+7:I[86532,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"CiteSection"]
+8:I[23211,["/_next/static/chunks/659b3ada419a6520.js","/_next/static/chunks/e575be28ed940cb5.js"],"Footer"]
+9:I[97367,["/_next/static/chunks/4fd93823156e59e8.js"],"OutletBoundary"]
+a:"$Sreact.suspense"
+:HL["/_next/static/chunks/4bc1595dae576d51.css","style"]
+0:{"buildId":"2ZTxNLbkTBSCGMM9vl_LS","rsc":["$","$1","c",{"children":[[["$","div",null,{"className":"App-module__W3dFvG__App","children":[["$","$L2",null,{}],["$","section",null,{"id":"about","children":["$","$L3",null,{}]}]]}],["$","$L4",null,{}],["$","section",null,{"className":"bg-gray-100 py-16","children":["$","div",null,{"className":"mx-auto max-w-7xl px-4 sm:px-6 lg:px-8","children":[["$","h2",null,{"id":"leaderboard","className":"text-lg font-semibold","style":{"fontFamily":"Gill Sans MT, sans-serif"},"children":"LLM Leaderboard"}],["$","p",null,{"className":"text-gray-500 text-sm leading-5 mt-2 mb-8 max-w-3xl","style":{"fontFamily":"Gill Sans MT, sans-serif"},"children":"The leaderboard below presents the performance of state-of-the-art LLMs across multiple metrics, including average score, binary correctness, and cost per query."}],["$","$L5",null,{}]]}]}],["$","section",null,{"className":"bg-gray-100 py-16","children":["$","div",null,{"className":"mx-auto max-w-full px-4 overflow-x-auto","children":["$","$L6",null,{}]}]}],["$","$L7",null,{}],["$","div",null,{"id":"contact","className":"App-module__W3dFvG__App","children":[" ",["$","$L8",null,{}]," "]}]],[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/4bc1595dae576d51.css","precedence":"next"}],["$","script","script-0",{"src":"/_next/static/chunks/659b3ada419a6520.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/e575be28ed940cb5.js","async":true}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],"loading":null,"isPartial":false}
+b:null
