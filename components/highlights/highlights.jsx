@@ -9,16 +9,19 @@ export const Highlights = () => {
 
         <ul className={styles.highlightsList}>
           <li>
-            <strong>Realistic Evaluation:</strong> RubberDuckBench tests AI coding assistants on 15 contextualized questions derived from GitHub pull request comments, spanning Java, Python, and C++. This goes beyond traditional benchmarks by evaluating code reasoning in real-world projects.
+             We find that even state of the art models fail to give consistent, correct responses across the benchmark.
           </li>
           <li>
-            <strong>Challenging Benchmark:</strong> Even the top-performing models (Grok 4: 69.3%, Claude Opus 4: 68.5%, GPT-5: 67.8%) rarely answer questions completely correctly across trials, highlighting the difficulty of reasoning over contextualized code.
+            Grok 4 (69.29%), Claude Opus 4 (68.5%), and GPT-5 (67.8%) perform best overall, but do not exhibit pairwise significant superiority over the next 9 best performing models.
           </li>
           <li>
-            <strong>Language & Question Type Differences:</strong> Models perform best on Java and Library Behavior questions, but struggle with Python and Project Behavior questions, indicating variability in cross-language and cross-task performance.
+             Most models obtain points through partial credit, with the best performing models only answering at most 2 questions completely correctly across all trials.
           </li>
           <li>
-            <strong>Performance vs Cost & Size:</strong> High model cost or larger parameter counts do not guarantee better performance. Some smaller, low-cost models achieve comparable or better results than larger, expensive alternatives.
+           Models often hallucinate with lies in 58.3% of responses on average.
+          </li>
+           <li>
+           Cost analysis reveals no correlation between expense (API pricing or parameter count) and performance.
           </li>
         </ul>
 

@@ -16,7 +16,7 @@ type HeatmapDatum = {
   answer: string
   type: string
   rubric: string,
-  rubricpoints: string
+  pointsdeducted: string
 
 };
 
@@ -290,8 +290,8 @@ export default function Heatmap() {
               </a>
             </p>
             <p>
-              <strong>Rubric Points: </strong>
-              {selectedCell.rubricpoints}
+              <strong>Points Deducted: </strong>
+              {selectedCell.pointsdeducted}
             </p>
 
 

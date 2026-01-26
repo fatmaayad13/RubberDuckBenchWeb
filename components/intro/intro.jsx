@@ -42,9 +42,11 @@ export const Intro = () => {
           </ul>
 
           <br></br>
-          <p className={styles.title}> RubberDuckBench is a benchmark for evaluating AI coding assistants on real-world, contextualized coding questions derived from GitHub pull request comments. 
-            It includes 15 questions across Java, Python, and C++, each with detailed rubrics to assess answer correctness. 
-            By testing 20 state-of-the-art LLMs, RubberDuckBench provides a framework for comparing model performance and advancing research in reliable AI coding assistants. <br></br>
+          <p className={styles.title}> Programmers are turning to AI coding assistants to answer questions about their code, but it is unclear how well models perform at answering contextualized questions.
+             Do state of the art LLMs answer questions about contextualized code correctly? Do they hallucinate or lie about API or project specific facts? Do certain models perform better than others? 
+             We aim to answer these questions with RubberDuckBench: A benchmark for AI coding assistants. It includes 15 questions across Java, Python, and C++ derived from real world PR review comments. 
+             Each question is paired with a detailed rubric that was manually developed and applied to ensure a reliable evaluation. We evaluate a diverse set of 20 LLMs (proprietary & open-source) on answering these questions.
+ <br></br>
           </p>
         
           <p className={styles.description}>

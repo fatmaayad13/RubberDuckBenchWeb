@@ -64,7 +64,7 @@ const Filters: React.FC<FiltersProps> = ({
         <DropdownMenuLabel className="mt-2">Filter by Family</DropdownMenuLabel>
         <DropdownMenuSeparator />
         {allFamilies.map(family => (
-          <DropdownMenuCheckboxItem
+          <DropdownMenuCheckboxItem className="cursor: cursor-pointer"
             key={family}
             checked={selectedFamilies.includes(family)}
             onCheckedChange={() => toggleItem(family, selectedFamilies, setSelectedFamilies)}
