@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import LeaderboardTable from "../components/leaderboard-table";
 import { Navbar } from "./../components/navbar/navbar";
