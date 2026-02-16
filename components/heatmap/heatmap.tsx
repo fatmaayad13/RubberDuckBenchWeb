@@ -1,7 +1,7 @@
 "use client"
 import * as d3 from "d3";
 import { heatmapData } from "../../data/heatmapData";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import { useState } from "react";
 import "../../vars.css";
 import Draggable from "react-draggable";
@@ -20,11 +20,42 @@ type HeatmapDatum = {
 
 };
 
+type TrialKey = "trial1" | "trial2" | "trial3";
+
 export default function Heatmap() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const data: HeatmapDatum[] = heatmapData
-  const [selectedCell, setSelectedCell] = useState<HeatmapDatum | null>(null);
+
+  // activeTrial is now typed as TrialKey
+  const [activeTrial, setActiveTrial] = useState<TrialKey>("trial1");
+  type SelectedCell = HeatmapDatum & { activeTrial: TrialKey };
+  const [selectedCell, setSelectedCell] = useState<SelectedCell | null>(null);
+
+
   const nodeRef = useRef(null);
+  const data: HeatmapDatum[] = useMemo(
+    () =>
+      heatmapData.map((entry) => ({
+        model: entry.model,
+        language_num: entry.language_num,
+        question: entry.question,
+        type: entry.type,
+        score: entry.score[activeTrial] ?? 0,
+        answer: entry.answer[activeTrial] ?? "",
+        pointsdeducted: entry.pointsdeducted[activeTrial] ?? "",
+        rubric: entry.rubric[activeTrial] ?? "",
+      })),
+    [activeTrial]
+  );
+
+  const selectedData = selectedCell
+    ? heatmapData.find(
+      e =>
+        e.model === selectedCell.model &&
+        e.language_num === selectedCell.language_num
+    )
+    : null;
+
+
 
   const description = [
     "This heatmap shows LLM model performance on questions across different languages.",
@@ -170,8 +201,9 @@ export default function Heatmap() {
       .style("opacity", 0.8)
       .style("cursor", "pointer")
       .on("click", (event, d) => {
-        setSelectedCell(d)
+        setSelectedCell({ ...d, activeTrial });
       })
+
       .on("mouseover", function () {
         tooltip.style("opacity", 0.9).style("fill", "rgba(255, 219, 87, 0.85)");
         d3.select(this).style("stroke", "black").style("opacity", 0.9)
@@ -218,7 +250,7 @@ export default function Heatmap() {
         .attr("y", -70 + i * 18) // adjust line spacing (18px here)
         .text(line);
     });
-  }, []);
+  }, [data]);
 
   return (
     <div style={{ position: "relative" }}>
@@ -243,10 +275,8 @@ export default function Heatmap() {
               color: "rgb(5, 19, 57)",
               cursor: "pointer",
               boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-
             }}
           >
-
             <button
               onClick={() => setSelectedCell(null)}
               style={{
@@ -261,12 +291,16 @@ export default function Heatmap() {
                 color: "rgb(5, 19, 57)",
               }}
               aria-label="Close"
-            ><strong>✕</strong>
+            >
+              <strong>✕</strong>
             </button>
-            <h3><strong>LLM Model: </strong> {selectedCell.model} </h3>
 
-            <p><strong>Language & Question Number:</strong>  {selectedCell.language_num}  </p>
-            <p><strong>Score:</strong> {selectedCell.score}</p>
+            <h3><strong>LLM Model: </strong> {selectedCell.model}</h3>
+            <p><strong>Language & Question Number:</strong> {selectedCell.language_num}</p>
+
+            {/* Use selectedCell.activeTrial here */}
+            <p><strong>Score:</strong> {selectedData?.score[selectedCell.activeTrial] ?? 0}</p>
+
             <p><strong>Type:</strong> {selectedCell.type}</p>
 
             <p>
@@ -274,33 +308,79 @@ export default function Heatmap() {
               {selectedCell.question}
             </p>
 
+            {/* Trial buttons */}
+            <div style={{ display: "flex", gap: 8, marginBottom: 12 }}>
+              {(["trial1", "trial2", "trial3"] as TrialKey[]).map((trial, idx) => (
+                <button
+                  key={trial}
+                  onClick={() =>
+                    setSelectedCell(prev =>
+                      prev ? { ...prev, activeTrial: trial } : null
+                    )
+                  }
+                  style={{
+                    padding: "6px 12px",
+                    borderRadius: 6,
+                    border: "1px solid rgb(5, 19, 57)",
+                    background:
+                      selectedCell.activeTrial === trial ? "rgb(5, 19, 57)" : "transparent",
+                    color:
+                      selectedCell.activeTrial === trial ? "white" : "rgb(5, 19, 57)",
+                    cursor: "pointer",
+                    fontWeight: 500,
+                  }}
+                >
+                  Trial {idx + 1}
+                </button>
+              ))}
+            </div>
+
             <p>
               <strong>Answer:</strong><br />
-              {selectedCell.answer || "No answer yet"}
+              {heatmapData.find(
+                e =>
+                  e.model === selectedCell.model &&
+                  e.language_num === selectedCell.language_num
+              )?.answer[selectedCell.activeTrial] ?? ""}
             </p>
+
             <p>
               <strong>Rubric:</strong>{" "}
-              <a
-                href={selectedCell.rubric}
-                className="underline text-blue-500"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View rubric for {selectedCell.language_num}
-              </a>
+              {heatmapData.find(
+                e =>
+                  e.model === selectedCell.model &&
+                  e.language_num === selectedCell.language_num
+              )?.rubric[selectedCell.activeTrial] ? (
+                <a
+                  href={
+                    heatmapData.find(
+                      e =>
+                        e.model === selectedCell.model &&
+                        e.language_num === selectedCell.language_num
+                    )?.rubric[selectedCell.activeTrial]
+                  }
+                  className="underline text-blue-500"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View rubric for {selectedCell.language_num}
+                </a>
+              ) : (
+                "No rubric available"
+              )}
             </p>
+
             <p>
-              <strong>Points Deducted: </strong>
-              {selectedCell.pointsdeducted}
+              <strong>Points Deducted:</strong>{" "}
+              {heatmapData.find(
+                e =>
+                  e.model === selectedCell.model &&
+                  e.language_num === selectedCell.language_num
+              )?.pointsdeducted[selectedCell.activeTrial] ?? "N/A"}
             </p>
-
-
-
           </div>
         </Draggable>
       )}
-
     </div>
-  );
-}
-
+  )
+};
