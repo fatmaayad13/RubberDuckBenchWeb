@@ -1,4 +1,4 @@
 :HL["/RubberDuckBench/_next/static/chunks/94b04dfd9b3c6821.css","style"]
 :HC["/",""]
 :HL["/RubberDuckBench/_next/static/chunks/04261d9a214bcdcf.css","style"]
-0:{"buildId":"lJHDIQYBPV5JOKQXuKVfQ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"H8toErmA7RY5HVNGkJ64o","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
