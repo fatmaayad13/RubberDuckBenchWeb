@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RubberDuckBench Website
 
-## Getting Started
+A lightweight results website for RubberDuckBench — explore the LLM leaderboard and a question-level heatmap, then drill into trial answers, rubric deductions, and question categories.
 
-First, run the development server:
+Live site: `https://www.cs.brynmawr.edu/RubberDuckBench/`
 
+Highlights
+- One place for the paper, leaderboard, and detailed heatmap view
+- Heatmap cells reflect average score across trials, with click-to-inspect details
+- Static export designed to be hosted under `/RubberDuckBench/`
+
+Tech Stack
+- Next.js + React
+- D3 (heatmap rendering)
+- CSS Modules (+ a few Tailwind utility classes)
+
+Getting Started
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build Static Site (Produces `out/`)
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This repo is configured to export for subpath hosting at `/RubberDuckBench/` (so asset URLs work on the Bryn Mawr site).
 
-## Learn More
+Updating Results (Heatmap Data)
+Heatmap data is generated into `data/heatmapData_generated.json`.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx tsx scripts/import-data-heatmap.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Status
+Website is functional and actively iterated (design polish + data refreshes as benchmark results evolve).
