@@ -1,0 +1,6 @@
+[submodule "crqbench"]
+	path = crqbench
+	url = git@github.com:elizabethdinella/crqbench.git
+[submodule "RubberDuckBench"]
+	path = RubberDuckBench
+	url = git@github.com:elizabethdinella/RubberDuckBench.git

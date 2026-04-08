@@ -1,5 +1,6 @@
 "use client";
 import styles from "./intro.module.css";
+import { withBasePath } from "../../lib/withBasePath";
 
 export const Intro = () => {
   return (
@@ -21,7 +22,7 @@ export const Intro = () => {
                 className={styles.contactBtn}
                 onClick={() => window.open("https://github.com/user2716/RubberDuckBench", "_blank")}
               >
-                <div className="flex items-center gap-2"><img src="./images/logos/github.png" /> GitHub </div>
+                <div className="flex items-center gap-2"><img src={withBasePath("/images/logos/github.png")} /> GitHub </div>
               </button>
             </li>
             <li>
@@ -29,13 +30,13 @@ export const Intro = () => {
                 className={styles.contactBtn}
                 onClick={() => window.open("https://arxiv.org/abs/2601.16456", "_blank")}
               >
-                <div className="flex items-center gap-2"><img src="./images/logos/arxiv.png" /> arXiv </div>
+                <div className="flex items-center gap-2"><img src={withBasePath("/images/logos/arxiv.png")} /> arXiv </div>
               </button>
             </li>
             <li>
               <button
                 className={styles.contactBtn}
-              >  <div className="flex items-center gap-2"><img src="./images/logos/podium.png" /> <a href="#leaderboard" >Leaderboard </a></div>
+              >  <div className="flex items-center gap-2"><img src={withBasePath("/images/logos/podium.png")} /> <a href="#leaderboard" >Leaderboard </a></div>
               </button>
 
             </li>

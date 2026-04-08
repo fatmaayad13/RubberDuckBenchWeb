@@ -1,5 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/montserrat/900.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -48,6 +52,9 @@
 
 :root {
   --radius: 0.65rem;
+  --font-geist-sans: "Montserrat", Arial, Helvetica, sans-serif;
+  --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -123,4 +130,3 @@
     @apply bg-background text-foreground;
   }
 }
-

@@ -13,6 +13,7 @@ import {
 
 import { leaderboardData } from "@/data/models"
 import { SortByValue } from "@/components/leaderboard-table/types"
+import { withBasePath } from "@/lib/withBasePath"
 
 const LeaderboardTable = () => {
   const [search, setSearch] = useState("")
@@ -20,23 +21,20 @@ const LeaderboardTable = () => {
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
   const [selectedFamilies, setSelectedFamilies] = useState<string[]>([]);
 
+  const isRankingSort = sortBy === "average" || sortBy === "cost";
+  let filteredData = [...leaderboardData];
 
-  let filteredData = leaderboardData;
-
-  // Search filter
   if (search) {
     filteredData = filteredData.filter(row =>
       row.model.toLowerCase().includes(search.toLowerCase())
     );
   }
 
-  // Model & family filters
   filteredData = filteredData.filter(row =>
     (selectedModels.length === 0 || selectedModels.includes(row.model)) &&
     (selectedFamilies.length === 0 || selectedFamilies.includes(row.family))
   );
 
-  // Sorting
   if (sortBy === "model") {
     filteredData = filteredData.sort((a, b) => a.model.localeCompare(b.model));
   } else if (sortBy === "family") {
@@ -52,10 +50,7 @@ const LeaderboardTable = () => {
   }
 
   return (
-
-
     <>
-
       <div className="rounded-t-lg flex flex-col w-full h-30 bg-white shadow">
         <FilterHeading
           search={search}
@@ -67,9 +62,6 @@ const LeaderboardTable = () => {
           selectedFamilies={selectedFamilies}
           setSelectedFamilies={setSelectedFamilies}
         />
-
-
-
       </div>
 
       <div className="rounded border bg-background max-h-[50vh] overflow-y-scroll">
@@ -87,15 +79,16 @@ const LeaderboardTable = () => {
 
           <TableBody>
             {filteredData.map((row, index) => (
-
-              <TableRow key={row.model}
-              >
-                <TableCell className={index === 0 ? "font-bold text-primary" : ""}
-                >{index + 1}</TableCell>
-                <TableCell>  <div className="flex items-center gap-2">
-                  <img src={row.image} alt={row.model} className="h-6 w-6" />
-                  <span className="truncate">{row.model}</span>
-                </div></TableCell>
+              <TableRow key={row.model}>
+                <TableCell className={isRankingSort && index === 0 ? "font-bold text-primary" : ""}>
+                  {isRankingSort ? index + 1 : "-"}
+                </TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    <img src={withBasePath(row.image)} alt={row.model} className="h-6 w-6" />
+                    <span className="truncate">{row.model}</span>
+                  </div>
+                </TableCell>
                 <TableCell className="text-muted-foreground">
                   {row.family}
                 </TableCell>
@@ -104,7 +97,7 @@ const LeaderboardTable = () => {
                   {Array.from({ length: row.binary }).map((_, i) => (
                     <img
                       key={i}
-                      src="./images/logos/star.png"
+                      src={withBasePath("/images/logos/star.png")}
                       alt="Star"
                       className="h-5 w-5"
                     />
@@ -122,4 +115,3 @@ const LeaderboardTable = () => {
 }
 
 export default LeaderboardTable
-

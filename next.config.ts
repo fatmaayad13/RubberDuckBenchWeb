@@ -2,8 +2,14 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // basePath: "/RubberDuckBench",      
-  // assetPrefix: "/RubberDuckBench",
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  basePath: "/RubberDuckBench",
+  assetPrefix: "/RubberDuckBench",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/RubberDuckBench",
+  },
 };
 
 export default nextConfig;

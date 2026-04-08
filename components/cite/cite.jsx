@@ -5,11 +5,15 @@ import styles from "./cite.module.css";
 export const CiteSection = () => {
   const [copied, setCopied] = useState(false);
 
-  const bibtex = `@inproceedings{dinella2026rubberduckbench,
+  const bibtex = `@inproceedings{mohammad2026rubberduckbench,
   title={RubberDuckBench: A Benchmark for AI Coding Assistants},
-  author={Elizabeth Dinella and Ferida Mohammad and Fatma Ayad and Petros Maniatis and Satish Chandra},
-  booktitle={LLM4Code at ICSE},
-  year={2026}
+  author={Ferida Mohammad and Fatma Ayad and Petros Maniatis and Satish Chandra and Elizabeth Dinella},
+  booktitle={Proceedings of the Workshop on Large Language Models for Code (LLM4Code) at ICSE 2026},
+  year={2026},
+  doi={10.1145/3786181.3788710},
+  eprint={2601.16456},
+  archivePrefix={arXiv},
+  note={arXiv:2601.16456 [cs.SE]}
 }`;
 
   const copyToClipboard = async () => {

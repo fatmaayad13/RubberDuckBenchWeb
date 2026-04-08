@@ -2,11 +2,11 @@
 
 .navbar {
   position: relative;
-  background-color: var(--color-text);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 61px;
+  padding: 61px 1.5rem 0;
   z-index: 3;
 }
 
@@ -20,30 +20,30 @@
 }
 
 .title {
-
-  font-size: clamp(2rem, 4vw, 4rem); /* scales with screen width */
+  font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 900;
-  line-height: 1.2; /* prevents overlapping lines */
+  line-height: 1.2;
   margin-bottom: 1rem;
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  background: linear-gradient(90deg, var(--color-primary) 0%, rgb(236, 187, 24) 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  text-align: center; /* optional, centers text */
+  color: var(--color-primary);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  text-shadow: none;
+  filter: none;
+  box-shadow: none;
+  text-align: center;
   z-index: 0;
 }
 
 .brand {
-
   position: absolute;
-  left: 48%;
+  left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 0px;
-
-
+  gap: 0;
 }
 
 .menu {
@@ -53,37 +53,57 @@
 
 .menuItems {
   display: flex;
-  gap: 10px;
+  gap: 2px;
   list-style: none;
-
+  margin: 0;
+  padding: 0;
 }
 
 .menuBtn {
-
   display: none;
   cursor: pointer;
 }
 
 .menuItems a {
-  margin-left: 50px;
+  margin-left: 30px;
   font-size: 20px;
   color: var(--color-primary);
   text-decoration: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+  font-family: 'Gill Sans MT', 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
-@media screen and (max-width: 1200px) {
+.menuItems a:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 1600px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    padding-top: 24px;
+    min-height: 96px;
     z-index: 5;
+  }
+
+  .brand {
+    position: static;
+    transform: none;
+    max-width: calc(100% - 56px);
+    justify-content: center;
+  }
+
+  .title {
+    font-size: clamp(1.4rem, 6vw, 2.4rem);
+    margin-bottom: 0;
   }
 
   .menu {
     position: absolute;
-    right: 0;
-    margin-right: 10%;
+    top: 24px;
+    right: 1rem;
+    margin-right: 0;
     flex-direction: column;
     align-items: flex-end;
     gap: 5px;
@@ -93,7 +113,6 @@
   .menuBtn {
     display: block;
     cursor: pointer;
-
   }
 
   .menuItems {
@@ -102,20 +121,16 @@
     justify-content: center;
     gap: 10px;
     color: var(--color-text);
-    border-radius: 10px;
-    background: var(--color-text);
-    background: linear-gradient(0deg, var(--color-text) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 203, 5, 0.18);
+    background: rgba(5, 19, 57, 0.94);
     padding: 24px 20px;
-    box-shadow: 0 0 4px 0 rgba(82, 46, 56, 1);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
     z-index: 5;
   }
-
-
 
   .menuOpen {
     display: flex;
     z-index: 5;
-
-
   }
 }

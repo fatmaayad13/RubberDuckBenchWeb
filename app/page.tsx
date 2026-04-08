@@ -9,64 +9,59 @@ import { CiteSection } from "../components/cite/cite";
 import Heatmap from "../components/heatmap/heatmap";
 import styles from './App.module.css';
 
-
 const page = () => {
-  return (<>
-    <div className={styles.App}>
-      <Navbar />
-      <section id="about">
-        <Intro />
+  return (
+    <>
+      <div className={`${styles.App} ${styles.pageSurface}`}>
+        <Navbar />
+        <section id="about">
+          <Intro />
+        </section>
+      </div>
+
+      <Highlights />
+
+      <section className={styles.sectionShell}>
+        <div className={styles.sectionInner}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionKicker}>Benchmark Results</span>
+            <h2 id="leaderboard" className={styles.sectionTitle}>
+              LLM Leaderboard
+            </h2>
+            <p className={styles.sectionDescription}>
+              The leaderboard below presents the performance of state-of-the-art LLMs
+              across multiple metrics, including average score, binary correctness, and
+              cost per query.
+            </p>
+          </div>
+
+          <div className={styles.dataCard}>
+            <LeaderboardTable />
+          </div>
+        </div>
       </section>
 
-    </div>
-    <Highlights />
-    {/* <div className="flex flex-col p-10 bg-gray-100 w-full h-230"
-    >
-      <h2 id="leaderboard" className="font text-lg ml-25"
-        style={{ fontFamily: "Gill Sans MT, sans-serif" }}>LLM Leaderboard</h2>
-      <h2
-        className="text-gray-500 text-sm leading-5 mt-2 mb-6 ml-25"
-        style={{ fontFamily: "Gill Sans MT, sans-serif" }}
-      >        The leaderboard below presents the performance of state-of-the-art LLMs across multiple metrics, including average score, binary correctness, and cost per query. <br></br>
-        Use it to compare models, explore their rankings, and get a quick overview of how each LLM performs on our benchmark tasks.</h2>
-      <div className="mt-10 ml-45 mr-45">
-        <LeaderboardTable /></div>
+      <section id="heatmap" className={styles.sectionShell}>
+        <div className={`${styles.sectionInner} ${styles.heatmapSectionInner}`}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.sectionKicker}>Detailed View</span>
+            <h2 className={styles.sectionTitle}>Heatmap Showing Performance Across Question Types</h2>
+            <p className={styles.sectionDescription}>
+              This heatmap shows LLM model performance on questions across different languages. Rows are models, columns are language and question numbers, and cell colors reflect average scores across trials. Click a cell to view details like the question, average score, trial answers, and type.
+            </p>
+          </div>
 
+          <div className={`${styles.dataCard} ${styles.heatmapFrame}`}>
+            <Heatmap />
+          </div>
+        </div>
+      </section>
 
-    </div> */}
-
-    <section className="bg-gray-100 py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2
-          id="leaderboard"
-          className="text-lg font-semibold"
-          style={{ fontFamily: "Gill Sans MT, sans-serif" }}
-        >
-          LLM Leaderboard
-        </h2>
-
-        <p
-          className="text-gray-500 text-sm leading-5 mt-2 mb-8 max-w-3xl"
-          style={{ fontFamily: "Gill Sans MT, sans-serif" }}
-        >
-          The leaderboard below presents the performance of state-of-the-art LLMs
-          across multiple metrics, including average score, binary correctness, and
-          cost per query.
-        </p>
-
-        <LeaderboardTable />
+      <CiteSection />
+      <div id="contact" className={styles.App}>
+        <Footer />
       </div>
-    </section>
-    <section className="bg-gray-100 py-16">
-      <div className="mx-auto max-w-full px-4 overflow-x-auto">
-        <Heatmap />
-      </div>
-    </section>
-    <CiteSection />
-    <div id="contact" className={styles.App}> <Footer /> </div>
-
-
-  </>
+    </>
   );
 };
 
